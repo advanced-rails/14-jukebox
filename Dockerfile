@@ -23,5 +23,9 @@ WORKDIR /usr/src/app
 
 RUN bundle install
 
+ENV RAILS_SERVE_STATIC_FILES "true"
+ENV SECRET_KEY_BASE "5dc6520789f692f78d95c24c472b3b06765a41fd063629cb67556985d498847a3bf3a5973f0c22ea0c6a10c61b76c7e8a9c0fa256747dcd5556cdbcf619e1fcb"
+RUN rails assets:clobber && rails assets:precompile
+
 EXPOSE 3333
 CMD ["rails", "server"]
