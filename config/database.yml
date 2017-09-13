@@ -84,4 +84,8 @@ test:
 #
 production:
   <<: *default
+  host: pgchyld.postgres.database.azure.com
+  username: chyld@pgchyld
+  password: <%= ENV['PGPASSWORD'] %>
+  sslmode: require
   database: jukebox_production
